@@ -28,7 +28,7 @@ GameObject:
   m_IsActive: 1
 --- !u!1 &1130307653167718
 GameObject:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
@@ -88,6 +88,21 @@ GameObject:
   - component: {fileID: 122158870766973234}
   m_Layer: 0
   m_Name: Trail_P101
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1292636733722390
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4764548447963750}
+  m_Layer: 0
+  m_Name: handle_piv
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -286,7 +301,7 @@ Transform:
   m_LocalPosition: {x: -3, y: 0.2, z: 0}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children:
-  - {fileID: 4321768265966818}
+  - {fileID: 4764548447963750}
   - {fileID: 4708214567844208}
   - {fileID: 4722156743660780}
   - {fileID: 4018789534367600}
@@ -318,12 +333,12 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1130307653167718}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.4166667, z: -0.6666667}
+  m_LocalPosition: {x: 0, y: -0.25, z: -0.1}
   m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_Children:
   - {fileID: 4157572799306146}
   - {fileID: 4298006904203310}
-  m_Father: {fileID: 4215480853617298}
+  m_Father: {fileID: 4764548447963750}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4501210364173020
@@ -405,6 +420,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4708214567844208}
   m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4764548447963750
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1292636733722390}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.6, z: -0.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4321768265966818}
+  m_Father: {fileID: 4215480853617298}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4823909288927580
 Transform:
@@ -848,6 +877,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eaed6c9e0695ca44eaddc1f353ea548a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cam: {fileID: 20990380506715470}
+  piv_: {fileID: 1292636733722390}
   velocity: 0
   speed: 20
   turnspeed: 100
