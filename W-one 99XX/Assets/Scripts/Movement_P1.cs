@@ -10,6 +10,10 @@ public class Movement_P1 : MonoBehaviour {
 	public float speed;
 	public float turnspeed;
 	public float acceleration;
+	public ParticleSystem T01;
+	public ParticleSystem T02;
+	bool T_Active;
+	bool setT = false;
 	float holdtime;
 
 	// Use this for initialization
@@ -24,9 +28,18 @@ public class Movement_P1 : MonoBehaviour {
 		velocity = rig.velocity.x;
 
 		if (Input.GetKey (KeyCode.W)) 
+		{
 			holdtime += acceleration;
+			T_Active = true;
+		}
 		else if (holdtime > 0)
+		{
 			holdtime -= acceleration;
+			T_Active = false;
+		}
+
+		if (Input.GetKeyDown (KeyCode.W) || Input.GetKeyUp (KeyCode.W))
+			setT = false;
 
 		if (Input.GetKey (KeyCode.S)) 
 			holdtime -= acceleration;
@@ -38,6 +51,25 @@ public class Movement_P1 : MonoBehaviour {
 			
 		else if (Input.GetKey (KeyCode.D)) 
 			transform.Rotate (Vector3.up * turnspeed * Time.deltaTime);
+
+		if (T_Active)
+		{
+			if (!setT)
+			{
+				T01.Play ();
+				T02.Play ();
+				setT = true;
+			}
+		}
+		else
+		{
+			if (!setT)
+			{
+				T01.Stop ();
+				T02.Stop ();
+				setT = true;
+			}
+		}
 
 		if(holdtime <= -2)
 			holdtime = -2.0f;
