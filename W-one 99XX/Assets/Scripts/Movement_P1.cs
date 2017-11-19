@@ -5,7 +5,6 @@ using UnityEngine;
 public class Movement_P1 : MonoBehaviour {
 
 	Rigidbody rig;
-	Quaternion rot_;
 	public Camera cam;
 	public GameObject piv_;
 	public float velocity;

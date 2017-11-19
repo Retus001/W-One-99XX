@@ -5,7 +5,8 @@ using UnityEngine;
 public class Movement_P2 : MonoBehaviour {
 
 	Rigidbody rig;
-	Quaternion rot_;
+	public Camera cam;
+	public GameObject piv_;
 	public float velocity;
 	public float speed;
 	public float turnspeed;
@@ -25,12 +26,17 @@ public class Movement_P2 : MonoBehaviour {
 	void Update () 
 	{
 		Vector3 rigVel = rig.velocity;
+		Quaternion pivrot = piv_.transform.localRotation;
 		velocity = rig.velocity.x;
 
 		if (Input.GetKey (KeyCode.UpArrow)) 
 		{
 			holdtime += acceleration;
 			T_Active = true;
+			if (pivrot.x < 0.5f)
+				pivrot.x += 0.5f * Time.deltaTime;
+			if (cam.fieldOfView <= 80)
+				cam.fieldOfView += 10 * Time.deltaTime;
 		}
 		else if (holdtime > 0)
 		{
@@ -69,6 +75,10 @@ public class Movement_P2 : MonoBehaviour {
 				T02.Stop ();
 				setT = true;
 			}
+			if (pivrot.x > 0)
+				pivrot.x -= 0.5f * Time.deltaTime;
+			if (cam.fieldOfView >= 60)
+				cam.fieldOfView -= 10 * Time.deltaTime;
 		}
 
 		if(holdtime <= -2)
@@ -81,6 +91,7 @@ public class Movement_P2 : MonoBehaviour {
 			holdtime = 2.0f; 
 
 		rigVel = holdtime * speed * gameObject.transform.forward;
+		piv_.transform.localRotation = pivrot;
 		rig.velocity = rigVel;
 	}
 }
