@@ -17,10 +17,16 @@ public class Movement_P1 : MonoBehaviour {
 	bool T_Active;
 	bool setT = false;
 	float holdtime;
+	//[HideInInspector]
+	public int checkpoint;
+	//[HideInInspector]
+	public int rounds;
 
 	// Use this for initialization
 	void Start () {
 		rig = GetComponent <Rigidbody>();
+		checkpoint = 1;
+		rounds = 0;
 	}
 	
 	// Update is called once per frame
