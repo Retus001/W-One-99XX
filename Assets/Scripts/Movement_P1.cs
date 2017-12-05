@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Movement_P1 : MonoBehaviour {
 
@@ -32,6 +33,9 @@ public class Movement_P1 : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
 	{
+		if (rounds == 3)
+			SceneManager.LoadScene ("Win");
+
 		Vector3 rigVel = rig.velocity;
 		Quaternion pivrot = piv_.transform.localRotation;
 		velocity = rig.velocity.x;
@@ -59,11 +63,12 @@ public class Movement_P1 : MonoBehaviour {
 		else if (holdtime < 0)
 			holdtime += acceleration;
 
-		if (Input.GetKey (KeyCode.A)) 
+		if (Input.GetKey (KeyCode.A))
 			transform.Rotate (Vector3.down * turnspeed * Time.deltaTime);
-			
-		else if (Input.GetKey (KeyCode.D)) 
+		else if (Input.GetKey (KeyCode.D))
 			transform.Rotate (Vector3.up * turnspeed * Time.deltaTime);
+		else
+			GetComponent<Rigidbody> ().angularVelocity = Vector3.zero;
 
 		if (T_Active)
 		{

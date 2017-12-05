@@ -13,6 +13,7 @@ public class CheckpointSystem : MonoBehaviour {
 		{
 			if (_col.GetComponent<Movement_P1>().checkpoint == CheckPoint)
 			{
+				
 				if (CheckPoint == 0)
 				{
 					_col.GetComponent<Movement_P1> ().rounds++;
@@ -20,9 +21,36 @@ public class CheckpointSystem : MonoBehaviour {
 				if (CheckPoint == Checks.Length-3)
 				{
 					_col.GetComponent<Movement_P1> ().checkpoint = 0;
+					_col.GetComponent<CheckDistance> ().checkcount = 0;
 				}
 				else
+				{
 					_col.GetComponent<Movement_P1> ().checkpoint++;
+					_col.GetComponent<CheckDistance> ().ChangeCheck();
+				}
+					
+			}
+		}
+		if (_col.gameObject.CompareTag("P2"))
+		{
+			if (_col.GetComponent<Movement_P2>().checkpoint == CheckPoint)
+			{
+
+				if (CheckPoint == 0)
+				{
+					_col.GetComponent<Movement_P2> ().rounds++;
+				}
+				if (CheckPoint == Checks.Length-3)
+				{
+					_col.GetComponent<Movement_P2> ().checkpoint = 0;
+					_col.GetComponent<CheckDistance> ().checkcount = 0;
+				}
+				else
+				{
+					_col.GetComponent<Movement_P2> ().checkpoint++;
+					_col.GetComponent<CheckDistance> ().ChangeCheck();
+				}
+
 			}
 		}
 	}

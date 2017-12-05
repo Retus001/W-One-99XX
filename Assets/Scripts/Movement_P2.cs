@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Movement_P2 : MonoBehaviour {
 
@@ -11,20 +12,30 @@ public class Movement_P2 : MonoBehaviour {
 	public float speed;
 	public float turnspeed;
 	public float acceleration;
+	public float tiltspd;
 	public ParticleSystem T01;
 	public ParticleSystem T02;
 	bool T_Active;
 	bool setT = false;
 	float holdtime;
+	//[HideInInspector]
+	public int checkpoint;
+	//[HideInInspector]
+	public int rounds;
 	
 	// Use this for initialization
 	void Start () {
 		rig = GetComponent <Rigidbody>();
+		checkpoint = 1;
+		rounds = 0;
 	}
 	
 	// Update is called once per frame
 	void Update () 
 	{
+		if (rounds == 3)
+			SceneManager.LoadScene ("Win");
+
 		Vector3 rigVel = rig.velocity;
 		Quaternion pivrot = piv_.transform.localRotation;
 		velocity = rig.velocity.x;
@@ -34,7 +45,7 @@ public class Movement_P2 : MonoBehaviour {
 			holdtime += acceleration;
 			T_Active = true;
 			if (pivrot.x < 0.5f)
-				pivrot.x += 0.5f * Time.deltaTime;
+				pivrot.x += 0.5f * Time.deltaTime / tiltspd;
 			if (cam.fieldOfView <= 80)
 				cam.fieldOfView += 10 * Time.deltaTime;
 		}
@@ -54,9 +65,10 @@ public class Movement_P2 : MonoBehaviour {
 
 		if (Input.GetKey (KeyCode.LeftArrow)) 
 			transform.Rotate (Vector3.down * turnspeed * Time.deltaTime);
-			
 		else if (Input.GetKey (KeyCode.RightArrow)) 
 			transform.Rotate (Vector3.up * turnspeed * Time.deltaTime);
+		else
+			GetComponent<Rigidbody> ().angularVelocity = Vector3.zero;
 
 		if (T_Active)
 		{
@@ -76,7 +88,7 @@ public class Movement_P2 : MonoBehaviour {
 				setT = true;
 			}
 			if (pivrot.x > 0)
-				pivrot.x -= 0.5f * Time.deltaTime;
+				pivrot.x -= 0.5f * Time.deltaTime / tiltspd;
 			if (cam.fieldOfView >= 60)
 				cam.fieldOfView -= 10 * Time.deltaTime;
 		}

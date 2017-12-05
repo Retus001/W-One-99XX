@@ -8,6 +8,7 @@ TagManager:
   - P2
   - MM1
   - MM2
+  - CheckPoint
   layers:
   - Default
   - TransparentFX
