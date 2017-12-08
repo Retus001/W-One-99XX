@@ -7,7 +7,7 @@ public class PowerUp_Jugador : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		MCM.GetComponents<MartCarMovement> ();
+		MCM.GetComponent<MartCarMovement> ();
 	}
 	
 	// Update is called once per frame
@@ -17,6 +17,21 @@ public class PowerUp_Jugador : MonoBehaviour {
 
 	void OnTriggerEnter (Collider _col)
 	{
+		if (_col.CompareTag ("PU_G")) {
+
+		}
+		if (_col.CompareTag ("PU_S")) {
+
+		}
+		if (_col.CompareTag ("PU_G")) {
+
+		}
+		if (_col.CompareTag ("PU_G")) {
+
+		}
+		if (_col.CompareTag ("PU_G")) {
+
+		}
 
 	}
 }

@@ -1,4 +1,4 @@
-﻿﻿using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -25,6 +25,10 @@ public class MartCarMovement : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		rigi = GetComponent<Rigidbody> ();
+		RT_Forward = KeyCode.E;
+		LT_Forward = KeyCode.Q;
+		RT_Backguard = KeyCode.D;
+		LT_Backguard = KeyCode.A;
 	}
 
 	// Update is called once per frame
