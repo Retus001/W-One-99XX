@@ -2,14 +2,26 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody))]
 public class MartCarMovement : MonoBehaviour {
 
 	Rigidbody rigi;
+	[Tooltip("Es la fuerza con la que acelera")]
 	public float Pawah;
+	[Tooltip("Es la velocidad maxima a la que llega")]
 	public float MaxSpeed;
-	public float RotationSpeed;
+	[Tooltip("Es la fuerza con la que rota")]
+	public float RotationPawah;
+	[Tooltip("Es la rapidez maxima con la que rota")]
+	public float RotationMaxSpeed;
+	[Range(0.0f, 1.0f)]
+	[Tooltip("Es la rapidez con la que deja de rotar")]
 	public float RotationBreaks;
+	[Range(0.0f, 1.0f)]
+	[Tooltip("Es la fuerza con la que se frena al no acelerar")]
 	public float Frenos;
+	[Tooltip("Que tan rapido llega a el maximo de estar dando vuelta")]
+	public float turnSensibility;
 	//TurbinaR
 	float RT_Force = 0; // Right Translation Force
 	float RR_Force = 0; //Right Rotation Force
@@ -33,11 +45,11 @@ public class MartCarMovement : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetKey (RT_Forward)) {
-			RT_Force = 1;
+		if (Input.GetKey (RT_Forward) && RT_Force < 1) {
+			RT_Force += turnSensibility*Time.deltaTime;
 
 		} else if (Input.GetKey (RT_Backguard)) {
-			RT_Force = -1;
+			RT_Force -= turnSensibility * Time.deltaTime;
 		} else {
 			RT_Force = 0;
 		}
@@ -53,7 +65,9 @@ public class MartCarMovement : MonoBehaviour {
 			rigi.velocity += gameObject.transform.forward * (LT_Force + RT_Force) * Pawah;
 		}
 		//gameObject.transform.Rotate (Vector3.up * (LT_Force + RT_Force) * RotationSpeed);
-		rigi.angularVelocity += gameObject.transform.up * (-LT_Force + RT_Force) * RotationSpeed;
+		if (rigi.angularVelocity.magnitude < RotationMaxSpeed) {
+			rigi.angularVelocity += gameObject.transform.up * (-LT_Force + RT_Force) * RotationPawah;
+		}
 
 		//Friccion del aire ...?
 		rigi.velocity -= Frenos*rigi.velocity;
