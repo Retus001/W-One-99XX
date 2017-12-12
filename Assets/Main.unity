@@ -6008,7 +6008,8 @@ Prefab:
       propertyPath: m_CollisionDetection
       value: 2
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114398634598554872, guid: 81ae003edd90b514ba078ab4a815fd0f, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 81ae003edd90b514ba078ab4a815fd0f, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &1741196906
@@ -6932,6 +6933,34 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bcc6e256e5c3a3149b50f3541dd26449, type: 3}
   m_IsPrefabParent: 0
+--- !u!1 &1862911965 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1888476830524396, guid: 81ae003edd90b514ba078ab4a815fd0f,
+    type: 2}
+  m_PrefabInternal: {fileID: 1733772265}
+--- !u!114 &1862911966
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1862911965}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ccd22f98ccbee7408a27cbf0e25a8db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Pawah: 0
+  MaxSpeed: 0
+  RotationPawah: 0
+  RotationMaxSpeed: 0
+  RotationBreaks: 0
+  Frenos: 0
+  turnSensibility: 0
+  RT_Forward: 0
+  RT_Backguard: 0
+  LT_Forward: 0
+  LT_Backguard: 0
+  test: {x: 0, y: 0, z: 0}
 --- !u!1001 &1877230468
 Prefab:
   m_ObjectHideFlags: 0
@@ -7545,11 +7574,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ccd22f98ccbee7408a27cbf0e25a8db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Pawah: 0
+  Pawah: 1.5
   MaxSpeed: 20
-  RotationSpeed: 10
-  RotationBreaks: 10
-  Frenos: 10
+  RotationPawah: 0
+  RotationMaxSpeed: 0
+  RotationBreaks: 0.1
+  Frenos: 0.1
+  turnSensibility: 0
   RT_Forward: 0
   RT_Backguard: 0
   LT_Forward: 0

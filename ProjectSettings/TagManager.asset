@@ -9,6 +9,16 @@ TagManager:
   - MM1
   - MM2
   - CheckPoint
+  - PU_G
+  - PU_S
+  - PU_ST
+  - PU_O
+  - PU_UB
+  - PU_B
+  - PU_I
+  - PU_VB
+  - PU_F
+  - PU_M
   layers:
   - Default
   - TransparentFX
