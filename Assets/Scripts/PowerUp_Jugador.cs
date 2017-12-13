@@ -34,6 +34,20 @@ public class PowerUp_Jugador : MonoBehaviour {
 				}
 			}
 		}
+		if (PUS >= 1) {
+			if(gameObject.CompareTag("P1")) {
+				if (Input.GetKey (KeyCode.W)) {
+					PUS -= 1;
+					MCM.MaxSpeed += 5;
+				}
+			}
+			if(gameObject.CompareTag("P2")) {
+				if (Input.GetKey (KeyCode.Keypad8)) {
+					PUS -= 1;
+					MCM.MaxSpeed += 5;
+				}
+			}
+		}
 	}
 
 	void OnTriggerEnter(Collider _col)

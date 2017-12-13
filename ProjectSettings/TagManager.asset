@@ -19,6 +19,7 @@ TagManager:
   - PU_VB
   - PU_F
   - PU_M
+  - Spawner
   layers:
   - Default
   - TransparentFX

@@ -43,6 +43,9 @@ public class MartCarMovement : MonoBehaviour {
 		LT_Forward = KeyCode.Q;
 		RT_Backguard = KeyCode.D;
 		LT_Backguard = KeyCode.A;
+		RotationPawah = 3;
+		RotationMaxSpeed = 2;
+		MaxSpeed = 30;
 	}
 
 	// Update is called once per frame
