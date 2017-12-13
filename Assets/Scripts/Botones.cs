@@ -16,7 +16,6 @@ public class Botones : MonoBehaviour {
 
 	public void Info()
 	{
-		mixer.PlayOneShot (villancicos);
 		clilcs++;
 		if(clilcs >= 100)
 		{
