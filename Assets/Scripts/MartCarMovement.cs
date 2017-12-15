@@ -79,7 +79,7 @@ public class MartCarMovement : MonoBehaviour {
 
 
 		if (rigi.velocity.magnitude < MaxSpeed) {
-			rigi.velocity += gameObject.transform.forward * (RT_Force - LT_Force) * Pawah;
+			rigi.velocity += gameObject.transform.forward * ((RT_Force - LT_Force) * (Mathf.Abs(RT_Force - LT_Force) == 2 ? 0.5f : 1 )) * Pawah;
 		}
 		//gameObject.transform.Rotate (Vector3.up * (LT_Force + RT_Force) * RotationSpeed);
 		if (rigi.angularVelocity.magnitude < RotationMaxSpeed) {
