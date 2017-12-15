@@ -5,11 +5,13 @@ using UnityEngine;
 [RequireComponent(typeof(AudioSource))]
 public class SFX_Jugadores : MonoBehaviour {
 	public AudioSource AS;
-	public AudioClip push;
-	public AudioClip poom;
+	AudioClip push;
+	AudioClip poom;
 
 	void Start () {
 		AS.GetComponent<AudioSource> ();
+		push.Equals(Resources.Load ("SFX/poosh"));
+		poom.Equals(Resources.Load("SFX/1 boom"));
 	}
 	void Update () {
 	}
