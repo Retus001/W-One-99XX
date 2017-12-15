@@ -25,11 +25,17 @@ public class PowerUp_Jugador : MonoBehaviour {
 		if (PUG >= 1) {
 			if(gameObject.CompareTag("P1")) {
 				if (Input.GetKey (KeyCode.W)) {
+					
+				}
+				if (Input.GetKey (KeyCode.S)) {
 
 				}
 			}
 			if(gameObject.CompareTag("P2")) {
 				if (Input.GetKey (KeyCode.Keypad8)) {
+
+				}
+				if (Input.GetKey (KeyCode.Keypad5)) {
 
 				}
 			}
