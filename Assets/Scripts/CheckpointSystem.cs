@@ -11,21 +11,21 @@ public class CheckpointSystem : MonoBehaviour {
 	{
 		if (_col.gameObject.CompareTag("P1"))
 		{
-			if (_col.GetComponent<Movement_P1>().checkpoint == CheckPoint)
+			if (_col.GetComponent<Contadores1>().checkpoint == CheckPoint)
 			{
 				
 				if (CheckPoint == 0)
 				{
-					_col.GetComponent<Movement_P1> ().rounds++;
+					_col.GetComponent<Contadores1> ().rounds++;
 				}
 				if (CheckPoint == Checks.Length-3)
 				{
-					_col.GetComponent<Movement_P1> ().checkpoint = 0;
+					_col.GetComponent<Contadores1> ().checkpoint = 0;
 					_col.GetComponent<CheckDistance> ().checkcount = 0;
 				}
 				else
 				{
-					_col.GetComponent<Movement_P1> ().checkpoint++;
+					_col.GetComponent<Contadores1> ().checkpoint++;
 					_col.GetComponent<CheckDistance> ().ChangeCheck();
 				}
 					
@@ -33,21 +33,21 @@ public class CheckpointSystem : MonoBehaviour {
 		}
 		if (_col.gameObject.CompareTag("P2"))
 		{
-			if (_col.GetComponent<Movement_P2>().checkpoint == CheckPoint)
+			if (_col.GetComponent<Contadores2>().checkpoint == CheckPoint)
 			{
 
 				if (CheckPoint == 0)
 				{
-					_col.GetComponent<Movement_P2> ().rounds++;
+					_col.GetComponent<Contadores2> ().rounds++;
 				}
 				if (CheckPoint == Checks.Length-3)
 				{
-					_col.GetComponent<Movement_P2> ().checkpoint = 0;
+					_col.GetComponent<Contadores2> ().checkpoint = 0;
 					_col.GetComponent<CheckDistance> ().checkcount = 0;
 				}
 				else
 				{
-					_col.GetComponent<Movement_P2> ().checkpoint++;
+					_col.GetComponent<Contadores2> ().checkpoint++;
 					_col.GetComponent<CheckDistance> ().ChangeCheck();
 				}
 
