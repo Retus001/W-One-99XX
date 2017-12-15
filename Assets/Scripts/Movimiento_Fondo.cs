@@ -13,5 +13,6 @@ public class Movimiento_Fondo : MonoBehaviour {
 
 	void CargarOtraScena()
 	{
-		EditorSceneManager.LoadScene ();
+		EditorSceneManager.LoadScene ("Inicio");
 	}
+}

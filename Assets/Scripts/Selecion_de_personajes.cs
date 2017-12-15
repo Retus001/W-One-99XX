@@ -8,18 +8,32 @@ public class Selecion_de_personajes : MonoBehaviour {
 
 	public Button[] Opciones;
 
+	public int Jugador;
+
 	public void Opcion1()
 	{
-		Opciones [1].enabled = false;
+		Opciones [0].enabled = false;
+		if (Jugador >= 2) {
+			EditorSceneManager.LoadScene ("Load_Screen");
+		}
+		Jugador = 2;
 	}
 
 	public void Opcion2()
 	{
-		
+		Opciones [1].enabled = false;
+		if (Jugador >= 2) {
+			EditorSceneManager.LoadScene ("Load_Screen");
+		}
+		Jugador = 2;
 	}
 
 	public void Opcion3()
 	{
-
+		Opciones [2].enabled = false;
+		if (Jugador >= 2) {
+			EditorSceneManager.LoadScene ("Load_Screen");
+		}
+		Jugador = 2;
 	}
 }
