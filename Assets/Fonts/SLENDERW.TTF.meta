@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: cd5e2c2901f614b48bd5ac610c2d3e20
+timeCreated: 1512585479
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Slender Wide BRK
+  fontNames:
+  - Slender Wide BRK
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
