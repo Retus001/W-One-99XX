@@ -3,7 +3,23 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - P1
+  - P2
+  - MM1
+  - MM2
+  - CheckPoint
+  - PU_G
+  - PU_S
+  - PU_ST
+  - PU_O
+  - PU_UB
+  - PU_B
+  - PU_I
+  - PU_VB
+  - PU_F
+  - PU_M
+  - Spawner
   layers:
   - Default
   - TransparentFX
@@ -13,10 +29,10 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
-  - 
+  - Players
+  - Walls
+  - AI
+  - Hazards
   - 
   - 
   - 
