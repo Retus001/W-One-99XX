@@ -10,8 +10,8 @@ public class SFX_Jugadores : MonoBehaviour {
 
 	void Start () {
 		AS.GetComponent<AudioSource> ();
-		push.Equals(Resources.Load ("SFX/poosh"));
-		poom.Equals(Resources.Load("SFX/1 boom"));
+		push = Resources.Load <AudioClip> ("SFX/poosh");
+		poom = Resources.Load<AudioClip>("SFX/1 boom");
 	}
 	void Update () {
 	}

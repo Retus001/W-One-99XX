@@ -3511,10 +3511,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed76886f83e09b4418cae5f6c030320c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AS: {fileID: 507197277}
-  S1: {fileID: 8300000, guid: 93956e76bf4523b40bfdf787815ddb94, type: 3}
-  S2: {fileID: 0}
-  S3: {fileID: 0}
 --- !u!82 &507197277
 AudioSource:
   m_ObjectHideFlags: 0
@@ -13397,18 +13393,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ccd22f98ccbee7408a27cbf0e25a8db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Pawah: 0
-  MaxSpeed: 0
-  RotationPawah: 0
-  RotationMaxSpeed: 0
-  RotationBreaks: 0
-  Frenos: 0
-  turnSensibility: 0
+  Pawah: 5
+  MaxSpeed: 100
+  RotationPawah: 1
+  RotationMaxSpeed: 3
+  RotationBreaks: 0.117
+  Frenos: 0.122
+  turnSensibility: 1
   dir: 0
-  RT_Forward: 0
-  RT_Backguard: 0
-  LT_Forward: 0
-  LT_Backguard: 0
+  RT_Forward: 265
+  RT_Backguard: 262
+  LT_Forward: 263
+  LT_Backguard: 260
   test: {x: 0, y: 0, z: 0}
 --- !u!114 &1862911967
 MonoBehaviour:
@@ -13422,8 +13418,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AS: {fileID: 1862911968}
-  push: {fileID: 8300000, guid: a5fd5f545a83bc3409ad4e19ecadb923, type: 3}
-  poom: {fileID: 8300000, guid: 5708d95025fe6ee4eb7117830019d81a, type: 3}
 --- !u!82 &1862911968
 AudioSource:
   m_ObjectHideFlags: 0
@@ -14392,18 +14386,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ccd22f98ccbee7408a27cbf0e25a8db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Pawah: 1.5
-  MaxSpeed: 30
-  RotationPawah: 3
-  RotationMaxSpeed: 2
-  RotationBreaks: 0.1
-  Frenos: 0.1
+  Pawah: 4.8
+  MaxSpeed: 110
+  RotationPawah: 1
+  RotationMaxSpeed: 3
+  RotationBreaks: 0.117
+  Frenos: 0.122
   turnSensibility: 1
   dir: 0
-  RT_Forward: 0
-  RT_Backguard: 0
-  LT_Forward: 0
-  LT_Backguard: 0
+  RT_Forward: 101
+  RT_Backguard: 100
+  LT_Forward: 113
+  LT_Backguard: 97
   test: {x: 0, y: 0, z: 0}
 --- !u!114 &2060968740
 MonoBehaviour:
@@ -14417,8 +14411,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AS: {fileID: 2060968741}
-  push: {fileID: 8300000, guid: a5fd5f545a83bc3409ad4e19ecadb923, type: 3}
-  poom: {fileID: 8300000, guid: 5708d95025fe6ee4eb7117830019d81a, type: 3}
 --- !u!82 &2060968741
 AudioSource:
   m_ObjectHideFlags: 0

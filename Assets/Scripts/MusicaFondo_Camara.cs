@@ -9,8 +9,8 @@ public class MusicaFondo_Camara : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		AS.GetComponent<AudioSource> ();
-		S1.Equals ("SFX/the offpring - all i want");
+		AS = GetComponent<AudioSource> ();
+		S1 = Resources.Load<AudioClip> ("SFX/the offpring - all i want");
 		AS.PlayOneShot(S1);
 	}
 }
