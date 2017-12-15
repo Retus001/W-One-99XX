@@ -14,7 +14,7 @@ public class Selecion_de_personajes : MonoBehaviour {
 	{
 		Opciones [0].enabled = false;
 		if (Jugador >= 2) {
-			EditorSceneManager.LoadScene ("Load_Screen");
+			Invoke ("Cargar", 2f);
 		}
 		Jugador = 2;
 	}
@@ -23,7 +23,7 @@ public class Selecion_de_personajes : MonoBehaviour {
 	{
 		Opciones [1].enabled = false;
 		if (Jugador >= 2) {
-			EditorSceneManager.LoadScene ("Load_Screen");
+			Invoke ("Cargar", 2f);
 		}
 		Jugador = 2;
 	}
@@ -32,8 +32,13 @@ public class Selecion_de_personajes : MonoBehaviour {
 	{
 		Opciones [2].enabled = false;
 		if (Jugador >= 2) {
-			EditorSceneManager.LoadScene ("Load_Screen");
+			Invoke ("Cargar", 2f);
 		}
 		Jugador = 2;
+	}
+
+	void Cargar()
+	{
+		EditorSceneManager.LoadScene ("Load_Screen");
 	}
 }

@@ -11,3 +11,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Seleccion_personaje.unity
     guid: 4461978ac76c8794980397c32aa70f79
+  - enabled: 1
+    path: Assets/Scenes/Load_Screen.unity
+    guid: eada616500ac3e4449c03ff6cb075ae3
+  - enabled: 1
+    path: Assets/Scenes/Main.unity
+    guid: d7ee87f22ce8e264e90056576285afc5
